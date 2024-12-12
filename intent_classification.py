@@ -19,8 +19,8 @@ class QueryIntentClassifier:
         Classifies a query into navigational, transactional, or informational intent (1rst level)
         """
 
-        # Construct the payload
-        payload = {
+        # Construct the generator
+        generator = {
             "input": prompt.format(query=query),
             "parameters": {
                 "max_new_tokens": self.max_tokens,
@@ -29,10 +29,12 @@ class QueryIntentClassifier:
         }
 
         # Send the request
-        response = requests.post(self.api_url, headers=self.headers, data=json.dumps(payload))
+        response = requests.post(self.api_url, headers=self.headers, data=json.dumps(generator))
 
         # Handle the response
         if response.status_code == 200:
+            print(query)
+            print(response.json()['results'][0]['generated_text'])
             return response.json()['results'][0]['generated_text']
         else:
             raise Exception(f"Error {response.status_code}: {response.text}")
