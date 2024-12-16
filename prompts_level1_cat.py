@@ -1,27 +1,27 @@
-DEF_ONLY = """
-  Classify the following query as either navigational, transactional, or informational. Only use one of these three categories as your answer.
-  A navigational query is used to find a specific website or page. A transactional query indicates an intent to complete a transaction such as to buy something or to download something.
-  An informational query seeks knowledge or answers without the intent to act.
+DEF_ONLY_L1 = """Classify the following query as either navigational, transactional, or informational. Only use one 
+of these three categories as your answer. A navigational query is used to find a specific website or page. A 
+transactional query indicates an intent to complete a transaction such as to buy something or to download something. 
+An informational query seeks knowledge or answers without the intent to act. 
 
 Choose the appropriate category for the following query: {query} \nClassification:"""
 
-
-DEF_KW = """
-    Classify the following query as either navigational, transactional, or informational. Only use one of these three categories as your answer.
-    A navigational query is used to find a specific website or page. Navigational queries often contain words such as "log in", "login", "sign in", "signin", "account","site", "www", ".com","sign","link".
-    A transactional query indicates an intent to complete a transaction such as to buy something or to download something.
-    Transactional queries often contain words such as "download", "buy", "free", "online", "calculator", "converter","pdf".
-    An informational query seeks knowledge or answers without the intent to act. Informational queries often contain words such as "do","does","when","where","how","definition".
+DEF_KW_L1 = """Classify the following query as either navigational, transactional, or informational. Only use one of 
+these three categories as your answer. A navigational query is used to find a specific website or page. Navigational 
+queries often contain words such as "log in", "login", "sign in", "signin", "account","site", "www", ".com","sign",
+"link". A transactional query indicates an intent to complete a transaction such as to buy something or to download 
+something. Transactional queries often contain words such as "download", "buy", "free", "online", "calculator", 
+"converter","pdf". An informational query seeks knowledge or answers without the intent to act. Informational queries 
+often contain words such as "do","does","when","where","how","definition". 
 
 Choose the appropriate category for the following query: {query} \nClassification:"""
 
-
-
-DEF_KW_FEW_SHOT = """
-Classify the following query as either navigational, transactional, or informational. Only use one of these three categories as your answer.
-A navigational query is used to find a specific website or page. Navigational queries often contain words such as "log in", "login", "sign in", "signin", "account","site", "www", ".com","sign","link".
-A transactional query indicates an intent to complete a transaction such as to buy something or to download something. Transactional queries often contain words such as "download", "buy", "free", "online", "calculator", "converter","pdf".
-An informational query seeks knowledge or answers without the intent to act. Informational queries often contain words such as "do","does","when","where","how","definition".
+DEF_KW_FEW_SHOT_L1 = """Classify the following query as either navigational, transactional, or informational. Only 
+use one of these three categories as your answer. A navigational query is used to find a specific website or page. 
+Navigational queries often contain words such as "log in", "login", "sign in", "signin", "account","site", "www", 
+".com","sign","link". A transactional query indicates an intent to complete a transaction such as to buy something or 
+to download something. Transactional queries often contain words such as "download", "buy", "free", "online", 
+"calculator", "converter","pdf". An informational query seeks knowledge or answers without the intent to act. 
+Informational queries often contain words such as "do","does","when","where","how","definition". 
 
     Examples:
 
@@ -62,8 +62,7 @@ An informational query seeks knowledge or answers without the intent to act. Inf
 
 Choose the appropriate category for the following query: {query} \nClassification:"""
 
-CHAIN_OF_THOUGHT = """
-Classify the following query as either navigational, transactional, or informational. Only use one of these three categories as your answer.
+CHAIN_OF_THOUGHT_L1 = """Classify the following query as either navigational, transactional, or informational. Only use one of these three categories as your answer.
 A navigational query is used to find a specific website or page. Navigational queries often contain words such as "log in", "login", "sign in", "signin", "account","site", "www", ".com","sign","link".
 A transactional query indicates an intent to complete a transaction such as to buy something or to download something.
 Transactional queries often contain words such as "download", "buy", "free", "online", "calculator", "converter", "pdf".
