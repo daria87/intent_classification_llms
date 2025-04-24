@@ -31,7 +31,7 @@ Use pip to install requirements:
 
 ## Fine-tuning:
 
-Fine-tuning experiments are un the folder fine-tuning (Jupyter notebooks)
+Fine-tuning experiments are in the folder `fine-tuning` (Jupyter notebooks)
 
 Parameters used for fine-tuning up to 15000 examples:
 ```bash
