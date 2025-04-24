@@ -1,4 +1,4 @@
-#ORCAS-I vs LLMs project
+# ORCAS-I vs LLMs project
 
 This package serves as basis for the paper "n a Few Words: Comparing Weak Supervision and LLMs for
 Short Query Intent Classification"
@@ -8,7 +8,7 @@ Link to the paper:
 DOI of the paper: https://doi.org/10.1145/3726302.3730213
 
 
-#In-context learning:
+# In-context learning:
 
 ## Installation
 
@@ -30,7 +30,7 @@ Use pip to install requirements:
 (intent_classification_llms) $ pip install -r requirements.txt
 ```
 
-#Fine-tuning:
+# Fine-tuning:
 
 Fine-tuning experiments are un the folder fine-tuning (Jupyter notebooks)
 
