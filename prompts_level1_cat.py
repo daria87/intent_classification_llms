@@ -62,80 +62,78 @@ Informational queries often contain words such as "do","does","when","where","ho
 
 Choose the appropriate category for the following query: {query} \nClassification:"""
 
-CHAIN_OF_THOUGHT_L1 = """Classify the following query as either navigational, transactional, or informational. Only use one of these three categories as your answer.
+CLUE_AND_REAS_L1 = """Classify the following query as either navigational, transactional, or informational. Only use one of these three categories as your answer.
 A navigational query is used to find a specific website or page. Navigational queries often contain words such as "log in", "login", "sign in", "signin", "account","site", "www", ".com","sign","link".
 A transactional query indicates an intent to complete a transaction such as to buy something or to download something.
 Transactional queries often contain words such as "download", "buy", "free", "online", "calculator", "converter", "pdf".
 An informational query seeks knowledge or answers without the intent to act. Informational queries often contain words such as "do", "does", "when", "where", "how", "definition".
 
-    Examples:
+Examples:
 
     Query: "google.com"
-    Reasoning: The user expresses the intent to navigate to google search engine website. The "com" preceeded by a dot clearly indicates that the query is navigational.
+    Reasoning: 1. The query contains the word ".com". 2. It shows that the user wants to navigate to a specific site. 3. Therefore, it is a navigational query.
     Classification: Navigational
 
     Query: "netflix login"
-    Reasoning: The user wants to navigate to netflix platform. The word "login" signals that the user wants to log in and the query is navigational.
+    Reasoning: 1.The query contains the word "login". 2. It indicates that the user wants to navigate to a specific site. 3. Consequently, it is a navigational query.
     Classification: Navigational
 
     Query: "facebook sign in"
-    Reasoning: The user wants to navigate to facebook site, which means that the query is navigational. The words "sign in" confirms it.
+    Reasoning: 1. The query contains the words "sign in". 2. It indicates that the user wants to navigate to a site. 3. Therefore, it is a navigational query.
     Classification: Navigational
 
     Query: "red cross site"
-    Reasoning: The user expresses the intent to navigate to the site of an organisation, that is why it is a navigational query.
-    Classification: Navigational
+    Reasoning: 1. The query contains the word "site". 2. It shows that the user wants to navigate to a site. 3. Therefore, it is a navigational query.
 
     Query: "austrian airlines link"
-    Reasoning: The user wants to visit a site of a specific company, which is an indicator of the navigational query. The presence of the word "link" further confirms that the query is navigational.
-    Classification: Navigational
+    Reasoning: 1. The query contains the word "link. 2. It indicates that the user wants to navigate to a site. 3. Consequently, it is a navigational query.
 
     Query: "online bank"
-    Reasoning: The user expresses the intent to perform a transaction on the web. The word "online" confirms that. That indicates that it is a transactional query.
+    Reasoning: 1. The query contains the words "online" and "bank". 2. It indicates that the user wants to perform a transaction. 3. Therefore, it is a transactional query.
     Classification: Transactional
 
     Query: "dropbox free download"
-    Reasoning: The user wants to download an app, that is to perform a transaction. The word "free" followed by the word "download" indicate that the query is transactional.
+    Reasoning: 1. The query contains the words "dropbox" and "free". 2. It indicates that the user wants to perform a transaction. 3. Consequently, it is a transactional query.
     Classification: Transactional
 
     Query: "buy iPhone 15"
-    Reasoning: The user is aiming to buy a product, that is to perform a transaction. The word "buy" indicates that the query is transactional.
+    Reasoning: 1. The query contains the word "buy". 2. It indicates that the user wants to perform a transaction. 3. Therefore, it is a transactional query.
     Classification: Transactional
 
     Query: "download Microsoft Office"
-    Reasoning: The user wants to download a software. The word "download" shows that the query is transactional.
+    Reasoning: 1. The query contains the word "download" and the name of the software. 2. It indicates that the user wants to perform a transaction. 3. Therefore, it is a transactional query.
     Classification: Transactional
 
     Query: "weight calculator"
-    Reasoning: The user wants to use a weight calculator which is an application. The word "calculator" further indicates that the query is transactional.
+    Reasoning: 1. The query contains the word "calculator". 2. It indicates that the user wants to perform a transaction. 3. Therefore, it is a transactional query.
     Classification: Transactional
 
     Query: "do ants eat grass"
-    Reasoning: It is a question that requires an answer about specific facts. The word "do" further confirms it. Therefore, the query is informational.
+    Reasoning: 1. The query contains the question word "do". 2. It indicates that the user is searching for an answer about specific facts. 3. Consequtively, it is an informational query.
     Classification: Informational
 
     Query: "dollar vs euro"
-    Reasoning: The user is searching for a comparison between dollar and euro. The word "vs" (versus) indicates that. Therefore, the query is informational.
+    Reasoning: 1. The query contains the word "vs", which means "versus". 2. It shows that the user wants to do a comparison. 3. Consequtively, it is an informational query.
     Classification: Informational
 
     Query: "cities in Austria"
-    Reasoning: The user is requiring geographical information which is indicated by the words "cities" and "Austria". That indicates that it is an informational query.
+    Reasoning: 1. The query contains the words that are linked to a country. 2. It shows that the user is searching for general information. 3. Consequtively, it is an informational query.
     Classification: Informational
 
     Query: "how to bake a cake"
-    Reasoning: The user requires instructions. The words "how to" confirm that. Therefore, the query is informational.
+    Reasoning: 1. The query contains the words "how to" and seeks information about baking food. 2. It indicates that the user is searching for an advice about performing a task. 3. Consequtively, it is an informational query.
     Classification: Informational
 
     Query: "when was John Lennon born"
-    Reasoning: The user requires an answer about specific facts. The word "when" confirms that. Consequently, it is an informational query.
+    Reasoning: 1. The query contains the question word "when" and seeks information about a person's birth date. 2. It indicates that the user's goal is to find facts. 3. Consequtively, it is an informational query.
     Classification: Informational
 
     Query: "machine learning"
-    Reasoning: The user wants to explore a topic, search for general knowledge. That is why the query is informational.
+    Reasoning: 1. The query contains the words of a concept 2. It shows that the user is searching for general information 3. Consequtively, it is an informational query.
     Classification: Informational
 
     Query: "ngo activities"
-    Reasoning: The abbreviations such as "ngo" are ofen present in informational queries. Therefore, the query is informational.
+    Reasoning: 1. The query contains an abbreviation "ngo". 2. Informational queries typically contain abbreviations 3. Consequtively, it is an informational query.
     Classification: Informational
 
-Choose the appropriate category for the following query: {query} \nClassification:"""
+    Choose the appropriate category for the following query: {query} \nClassification:"""
