@@ -1,4 +1,4 @@
-# ORCAS-I vs LLMs project
+# Weak supervision vs LLMs for intent classification
 
 This package serves as basis for the paper "n a Few Words: Comparing Weak Supervision and LLMs for
 Short Query Intent Classification"
