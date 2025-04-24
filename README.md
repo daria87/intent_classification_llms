@@ -8,9 +8,8 @@ Link to the paper:
 DOI of the paper: https://doi.org/10.1145/3726302.3730213
 
 
-# In-context learning:
+## In-context learning:
 
-## Installation
 
 Create conda environment:
 
@@ -30,7 +29,7 @@ Use pip to install requirements:
 (intent_classification_llms) $ pip install -r requirements.txt
 ```
 
-# Fine-tuning:
+## Fine-tuning:
 
 Fine-tuning experiments are un the folder fine-tuning (Jupyter notebooks)
 
